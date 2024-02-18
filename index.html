@@ -1,0 +1,53 @@
+<!DOCTYPE html> <!-- Déclare que le document est du type HTML5 -->
+<html lang="en"> <!-- Définit la langue principale du contenu du document comme anglais -->
+<head>
+    <meta charset="UTF-8"> <!-- Spécifie l'encodage de caractères pour le document en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure une représentation adéquate sur les appareils mobiles et définit le niveau de zoom initial -->
+    <link href="style.css" rel="stylesheet"> <!-- Lie une feuille de style externe au document pour la mise en forme -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet" type="text/css" /> <!-- Importe la police Roboto de Google Fonts pour être utilisée dans le document -->
+    <title>To do List Lion</title> <!-- Définit le titre du document, qui apparaîtra dans l'onglet du navigateur -->
+</head>
+<body>
+<div id="container"> <!-- Conteneur principal pour le contenu de la page -->
+    <h1>Lion Todo List<img src="/img/lion.png" id="logo" /></h1> <!-- Titre de la page avec image du logo -->
+    <!-- Zone d'ajout de tâche -->
+    <br>
+    <label for="task">Ajouté une tâche à effectuer:</label><br> <!-- Étiquette pour le champ de saisie de la tâche -->
+    <input type="text" id="task" required> <!-- Champ de saisie pour entrer une nouvelle tâche, marqué comme requis -->
+    <br>
+    <!-- Sélection de la priorité de la tâche -->
+    <br><label for="importance">Choisissez la priorité:</label><br> <!-- Étiquette pour le menu déroulant de priorité -->
+    <select name="listimportance" id="importance"> <!-- Menu déroulant pour sélectionner la priorité de la tâche -->
+        <option value="">--</option> <!-- Option par défaut sans valeur -->
+        <option value="Urgent">Urgent</option> <!-- Option pour une tâche urgente -->
+        <option value="important">important</option> <!-- Option pour une tâche importante -->
+        <option value="Normale">Normale</option> <!-- Option pour une tâche de priorité normale -->
+        <option value="idée">Idée</option> <!-- Option pour une tâche considérée comme une idée ou suggestion -->
+    </select><br>
+    <!-- Sélection de la date pour la tâche -->
+    <br><label for="start">Choisissez une date:</label><br> <!-- Étiquette pour le champ de sélection de date -->
+    <input type="date" id="start" name="trip-start" value="2024-02-10" min="2023-01-01" max="2027-12-31" required><br> <!-- Champ de sélection de date avec des limites -->
+    <!-- Sélection de l'heure pour la tâche -->
+    <br><label for="time">Choisissez une heure:</label><br> <!-- Étiquette pour le champ de sélection d'heure -->
+    <input type="time" id="time" name="begin" min="01:00" max="23:00" required><br><br> <!-- Champ de sélection d'heure avec des limites -->
+    <!-- Bouton pour ajouter la tâche à la liste -->
+    <button type="button" id="button">Ajouter</button><br><br>
+</div>
+<!-- Tableau affichant les tâches ajoutées -->
+<table id="taskTable"> <!-- Structure du tableau pour lister les tâches -->
+    <thead> <!-- En-tête du tableau -->
+        <tr> <!-- Ligne d'en-tête du tableau -->
+            <th scope="col">Tâche</th> <!-- Colonne pour le nom de la tâche -->
+            <th scope="col">Priorité</th> <!-- Colonne pour la priorité de la tâche -->
+            <th scope="col">Date</th> <!-- Colonne pour la date de la tâche -->
+            <th scope="col">Heure</th> <!-- Colonne pour l'heure de la tâche -->
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Les lignes de tâches seront ajoutées ici dynamiquement via JavaScript -->
+    </tbody>
+</table>
+
+<script src="app.js"></script> <!-- Lie le fichier JavaScript externe pour la logique de l'application -->
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* Applique une image de fond au corps entier de la page, sans répétition, couvrant entièrement l'espace disponible. */
+body {
+    background-image: url(/img/blurry_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Stylise tous les éléments <div> avec une bordure, une largeur minimale et fixe, une hauteur minimale, des marges pour le centrer horizontalement et verticalement, un padding, une ombre portée pour un effet 3D, et empêche le contenu débordant de s'afficher. */
+div {
+    border: 1px solid darkblue;
+    min-width: 500px;
+    width: 500px;
+    min-height: 300px; /* Exemple de hauteur minimale */
+    margin: 0 auto;
+    margin-top: 8px;
+    margin-bottom: 80px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: rgba(157, 21, 215, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+div:hover {
+    background-color: rgb(66, 166, 206);
+    cursor:pointer;
+}
+
+/* Centre le texte dans les titres <h1> situés dans les éléments <div>. */
+div h1 {
+    text-align: center;
+}
+/* Fixe la largeur de l'élément avec l'ID "logo" à 500px. */
+#logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
+}
+
+/* Fixe la largeur de l'élément avec l'ID "task" à 500px. */
+#task {
+    width: 500px;
+}
+
+/* Définit la police globale de la page à Helvetica Neue, Helvetica, Arial, sans-serif. */
+html {
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+/* Améliore l'apparence des champs de saisie, des sélecteurs et des boutons, avec des marges, du padding, et ajuste la largeur pour prendre en compte le padding. */
+input[type="text"], select, input[type="date"], input[type="time"] {
+    margin: 10px 0;
+    padding: 10px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+}
+
+/* Style le bouton avec l'ID "button" pour changer le curseur lors du survol, ajuste le padding et la taille de la police. */
+button#button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/* Stylise le tableau avec une marge supérieure, un agencement fixe, une largeur complète, des bordures, et centre le contenu. */
+table {
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid rgb(39, 53, 213);
+    align-content: center;
+}
+
+/* Stylise les cellules du corps du tableau avec des bordures. */
+tbody td {
+    border-collapse: collapse;
+    border: 1px solid rgb(12, 9, 9);
+}
+
+/* Applique une couleur de texte, une ombre de texte aux en-têtes du tableau. */
+thead {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* Stylise les en-têtes du tableau avec un dégradé de fond et des bordures. */
+thead th {
+    background: linear-gradient(to bottom, #f5f3f3, rgb(4, 2, 2));
+    border: 2px solid rgb(22, 13, 22);
+}
+
+/* Définit les largeurs spécifiques pour chaque colonne du tableau pour un agencement uniforme. */
+thead th:nth-child(1) { width: 60%; }
+thead th:nth-child(2) { width: 10%; }
+thead th:nth-child(3) { width: 15%; }
+thead th:nth-child(4), th:nth-child(5), th:nth-child(6) { width: 5%; }
+
+/* Alternance des couleurs de fond pour les lignes du tableau pour améliorer la lisibilité. */
+tbody tr:nth-child(odd) { background-color: #96b9e1; }
+tbody tr:nth-child(even) { background-color: #c2daeb; }
+
+/* Ajuste l'espacement des lettres pour les en-têtes et les cellules du tableau. */
+th, td {
+    padding: 5px;
+    letter-spacing: 1px;
+}
+thead th { letter-spacing: 5px; font-family: "Roboto", cursive; }
+
+/* Stylise les images utilisées comme boutons de suppression et de modification dans le tableau. */
+.delete-img, .modif-img {
+    height: 20px;
+    width: 20px;
+}
+
+/* Indique visuellement lorsque les champs de saisie sont invalides ou valides. */
+input:invalid { border: 2px solid red; }
+input:valid { border: 1px solid black; }
